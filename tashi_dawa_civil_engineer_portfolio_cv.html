@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tashi Dawa - Civil Engineer Portfolio & CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        },
+                        slate: {
+                            850: '#152033',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom print formatting to render cleanly as a hardcopy CV */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; font-size: 12pt; }
+            .print-shadow-none { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .print-break-inside-avoid { break-inside: avoid; }
+            .page-break { page-break-before: always; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light-glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-900 min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 no-print transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo & Brand -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center font-heading font-bold text-slate-900 text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        TD
+                    </div>
+                    <div>
+                        <span class="font-heading text-lg font-bold tracking-tight text-white block group-hover:text-amber-400 transition-colors">Tashi Dawa</span>
+                        <span class="text-xs text-amber-500 font-medium tracking-wide uppercase block -mt-1">Civil Site Engineer</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium text-slate-300">
+                    <a href="#about" class="px-3 py-2 hover:text-amber-400 transition-colors">About</a>
+                    <a href="#experience" class="px-3 py-2 hover:text-amber-400 transition-colors">Experience</a>
+                    <a href="#education" class="px-3 py-2 hover:text-amber-400 transition-colors">Education</a>
+                    <a href="#skills" class="px-3 py-2 hover:text-amber-400 transition-colors">Skills & Instruments</a>
+                    <a href="#languages" class="px-3 py-2 hover:text-amber-400 transition-colors">Languages</a>
+                    <a href="#contact" class="px-3 py-2 hover:text-amber-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="no-print inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-900 bg-amber-500 hover:bg-amber-400 rounded-lg shadow-md hover:shadow-amber-500/20 transition-all">
+                        <i class="fa-solid fa-print"></i>
+                        <span class="hidden sm:inline">Print CV</span>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-lg" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 pt-2 border-t border-slate-800 mt-2 space-y-1">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">About & Objective</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">Work Experience</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">Academic Qualification</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">Skills & Instruments</a>
+                <a href="#languages" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">Languages</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-amber-400 hover:bg-slate-800">Personal Details & Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative py-16 lg:py-24 overflow-hidden border-b border-slate-800">
+        <!-- Abstract background accent elements -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-helmet-safety"></i> Civil Engineer & Site Inspector
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight">
+                        Tashi Dawa
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Dedicated Civil Engineer with a Diploma from Jigme Namgyel Engineering College and over 3 years of hands-on experience in water treatment plants, municipal water distribution networks, bridges, and infrastructure construction across Bhutan.
+                    </p>
+
+                    <!-- Quick Contact / Action Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="mailto:trasheeydaawaa123@gmail.com" class="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Send Email
+                        </a>
+                        <a href="tel:+97517824454" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-xl transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> +975 17824454
+                        </a>
+                        <button onclick="copyContactInfo()" class="px-4 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/80 rounded-xl transition-all flex items-center gap-2 text-sm" title="Copy Contact Info">
+                            <i class="fa-regular fa-copy"></i>
+                            <span id="copyBtnText">Copy Contact</span>
+                        </button>
+                    </div>
+
+                    <!-- Meta Badges -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-slate-800/80">
+                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                            <span class="block text-amber-400 text-xl font-bold font-heading">3+ Years</span>
+                            <span class="text-xs text-slate-400 font-medium">Field Experience</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                            <span class="block text-amber-400 text-xl font-bold font-heading">1.3 MLD WTP</span>
+                            <span class="text-xs text-slate-400 font-medium">Water Supply Project</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 col-span-2 sm:col-span-1">
+                            <span class="block text-amber-400 text-xl font-bold font-heading">JNEC Alumni</span>
+                            <span class="text-xs text-slate-400 font-medium">Diploma in Civil Engg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 relative print-shadow-none">
+                        <div class="flex items-center gap-4 pb-6 border-b border-slate-700/60">
+                            <!-- Passport Photo Frame -->
+                            <div class="relative group">
+                                <div class="w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden border-2 border-amber-500/60 bg-slate-900 shadow-xl shadow-amber-500/10 flex items-center justify-center relative">
+                                    <img id="passportPhoto" src="40138_98efb8.jpg" alt="Tashi Dawa Passport Photo" class="w-full h-full object-cover object-[center_15%] filter contrast-[1.05] brightness-[0.98] transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/300x400/0f172a/f59e0b?text=Tashi+Dawa';">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                                <!-- Upload Button Badge -->
+                                <label for="photoUploadInput" class="no-print absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-900 flex items-center justify-center text-xs shadow-md cursor-pointer transition-transform hover:scale-110" title="Upload or change photo">
+                                    <i class="fa-solid fa-camera"></i>
+                                    <input type="file" id="photoUploadInput" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
+                                </label>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white font-heading">Tashi Dawa</h3>
+                                <p class="text-xs text-slate-400">CID: 12007000929</p>
+                                <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                                    <i class="fa-solid fa-circle text-[8px] mr-1"></i> Available for Opportunities
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="py-6 space-y-4 text-sm text-slate-300 border-b border-slate-700/60">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400"><i class="fa-solid fa-location-dot w-5 text-amber-500"></i> Current Base:</span>
+                                <span class="font-medium text-white">Samdrup Jongkhar, Bhutan</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400"><i class="fa-solid fa-house w-5 text-amber-500"></i> Permanent Origin:</span>
+                                <span class="font-medium text-white">Shingkhar, Zhemgang</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400"><i class="fa-solid fa-flag w-5 text-amber-500"></i> Nationality:</span>
+                                <span class="font-medium text-white">Bhutanese</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400"><i class="fa-solid fa-cake-candles w-5 text-amber-500"></i> Date of Birth:</span>
+                                <span class="font-medium text-white">2nd September, 2000</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex items-center justify-between text-xs text-slate-400">
+                            <span><i class="fa-solid fa-ring text-amber-500 mr-1"></i> Single</span>
+                            <span><i class="fa-solid fa-mars text-amber-500 mr-1"></i> Male</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-slate-900/60 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                <!-- Objective Card -->
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center gap-3 text-amber-400">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-compass text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white font-heading">Career Objective</h2>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                        "I want to work in a position that allows me to utilize my skills and knowledge and further strengthen them, while developing greater potential to grow through the years. I aim to contribute to an environment that benefits both myself and my teammates, enabling collective growth in professional capability and site execution."
+                    </p>
+                </div>
+
+                <!-- Strengths Grid -->
+                <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center gap-3 text-amber-400">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-star text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white font-heading">Core Strengths</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-amber-500 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Punctual & Sincere</h4>
+                                <p class="text-xs text-slate-400">Dedicated work ethic</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center gap-3">
+                            <i class="fa-solid fa-bullseye text-amber-500 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Goal Oriented</h4>
+                                <p class="text-xs text-slate-400">Hardworking engineer</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center gap-3">
+                            <i class="fa-solid fa-book-open-reader text-amber-500 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Keen Learner</h4>
+                                <p class="text-xs text-slate-400">Quickly adapts to tech</p>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-amber-500 text-lg"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">High Adaptability</h4>
+                                <p class="text-xs text-slate-400">Resilient in all field environments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 sm:py-20 border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-amber-500 font-semibold text-sm uppercase tracking-wider block mb-2">Track Record</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">Work Experience</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Comprehensive hands-on site management, water treatment infrastructure, and structural civil works.</p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative space-y-8 before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:-ml-px before:w-0.5 before:bg-slate-800">
+
+                <!-- Timeline item 1 -->
+                <div class="relative flex items-center md:justify-between group">
+                    <!-- Icon pin -->
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-amber-500 text-slate-900 font-bold flex items-center justify-center shadow-lg shadow-amber-500/20 border-4 border-slate-900 z-10">
+                        1
+                    </div>
+
+                    <!-- Left Column (Desktop) -->
+                    <div class="w-full md:w-[calc(50%-2.5rem)] pl-14 md:pl-0 md:pr-0 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl hover:border-amber-500/40 transition-all duration-300 print-break-inside-avoid">
+                            <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold mb-2">
+                                2023 - 2025
+                            </span>
+                            <h3 class="text-xl font-bold text-white font-heading">Z & K Construction Private Limited</h3>
+                            <p class="text-amber-500 font-medium text-sm mt-0.5">Site Engineer</p>
+                            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                                <strong class="text-slate-200">Key Responsibilities:</strong> Construction of Water Supply and distribution network for Samdrupchoeling Township along with a <strong>1.3 MLD Water Treatment Plant (WTP)</strong>.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2 md:justify-end">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-droplet text-blue-400 mr-1"></i> Water Supply</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-industry text-amber-400 mr-1"></i> WTP Construction</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-map-pin text-red-400 mr-1"></i> Samdrupchoeling</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block w-[calc(50%-2.5rem)]"></div>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative flex items-center md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-amber-500 text-slate-900 font-bold flex items-center justify-center shadow-lg shadow-amber-500/20 border-4 border-slate-900 z-10">
+                        2
+                    </div>
+
+                    <div class="hidden md:block w-[calc(50%-2.5rem)]"></div>
+
+                    <!-- Right Column -->
+                    <div class="w-full md:w-[calc(50%-2.5rem)] pl-14 md:pl-0">
+                        <div class="glass-card p-6 rounded-2xl hover:border-amber-500/40 transition-all duration-300 print-break-inside-avoid">
+                            <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold mb-2">
+                                2022 - 2023
+                            </span>
+                            <h3 class="text-xl font-bold text-white font-heading">M/s Jomo Construction</h3>
+                            <p class="text-amber-500 font-medium text-sm mt-0.5">Site Engineer</p>
+                            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                                <strong class="text-slate-200">Key Responsibilities:</strong> Construction of two numbers of Culverts and Hume Pipe Bridge at Woongborang Farm Road in Pemagatshel district.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-bridge text-amber-400 mr-1"></i> Culvert & Bridges</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-road text-slate-400 mr-1"></i> Farm Road Infra</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-map-pin text-red-400 mr-1"></i> Pemagatshel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative flex items-center md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-amber-500 text-slate-900 font-bold flex items-center justify-center shadow-lg shadow-amber-500/20 border-4 border-slate-900 z-10">
+                        3
+                    </div>
+
+                    <div class="w-full md:w-[calc(50%-2.5rem)] pl-14 md:pl-0 md:pr-0 md:text-right">
+                        <div class="glass-card p-6 rounded-2xl hover:border-amber-500/40 transition-all duration-300 print-break-inside-avoid">
+                            <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold mb-2">
+                                2021
+                            </span>
+                            <h3 class="text-xl font-bold text-white font-heading">K Nawang Construction Private Limited</h3>
+                            <p class="text-amber-500 font-medium text-sm mt-0.5">On-the-Job Trainee (OJT)</p>
+                            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                                <strong class="text-slate-200">Key Responsibilities:</strong> Assisted in site engineering and supervision for the construction of School Multi-Purpose Hall (MPH) at Pheteykha, Wangdue Phodrang and BPC colony at Samtokha.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2 md:justify-end">
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-building text-amber-400 mr-1"></i> Structural Buildings</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-graduation-cap text-green-400 mr-1"></i> School MPH</span>
+                                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs"><i class="fa-solid fa-map-pin text-red-400 mr-1"></i> Wangdue & Samtokha</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden md:block w-[calc(50%-2.5rem)]"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-16 sm:py-20 bg-slate-900/60 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-semibold text-sm uppercase tracking-wider block mb-2">Education</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">Academic Qualifications</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Formal engineering education and secondary academic records.</p>
+            </div>
+
+            <!-- Desktop / Tablet Table -->
+            <div class="hidden sm:block glass-card rounded-2xl overflow-hidden print-shadow-none">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300">
+                        <thead class="bg-slate-800/80 text-amber-400 font-heading uppercase text-xs tracking-wider border-b border-slate-700">
+                            <tr>
+                                <th scope="col" class="py-4 px-6">#</th>
+                                <th scope="col" class="py-4 px-6">Year</th>
+                                <th scope="col" class="py-4 px-6">Degree / Certificate</th>
+                                <th scope="col" class="py-4 px-6">Educational Institution</th>
+                                <th scope="col" class="py-4 px-6 text-right">% Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800">
+                            <tr class="hover:bg-slate-800/40 transition-colors">
+                                <td class="py-4 px-6 font-semibold text-white">1</td>
+                                <td class="py-4 px-6 text-amber-400 font-medium">2019 - 2021</td>
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-white">Diploma in Civil Engineering</div>
+                                    <div class="text-xs text-slate-400">Technical Engineering Program</div>
+                                </td>
+                                <td class="py-4 px-6 font-medium text-slate-200">
+                                    <i class="fa-solid fa-university text-amber-500 mr-2"></i>Jigme Namgyel Engineering College, Bhutan
+                                </td>
+                                <td class="py-4 px-6 text-right">
+                                    <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold">
+                                        66.75%
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition-colors">
+                                <td class="py-4 px-6 font-semibold text-white">2</td>
+                                <td class="py-4 px-6 text-amber-400 font-medium">2018</td>
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-white">BHSEC - XII</div>
+                                    <div class="text-xs text-slate-400">Higher Secondary Education</div>
+                                </td>
+                                <td class="py-4 px-6 font-medium text-slate-200">
+                                    <i class="fa-solid fa-school text-amber-500 mr-2"></i>Zhemgang Central School, Bhutan
+                                </td>
+                                <td class="py-4 px-6 text-right">
+                                    <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold">
+                                        67.40%
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/40 transition-colors">
+                                <td class="py-4 px-6 font-semibold text-white">3</td>
+                                <td class="py-4 px-6 text-amber-400 font-medium">2016</td>
+                                <td class="py-4 px-6">
+                                    <div class="font-bold text-white">BCSE - X</div>
+                                    <div class="text-xs text-slate-400">Secondary Education</div>
+                                </td>
+                                <td class="py-4 px-6 font-medium text-slate-200">
+                                    <i class="fa-solid fa-school text-amber-500 mr-2"></i>Buli Central School, Bhutan
+                                </td>
+                                <td class="py-4 px-6 text-right">
+                                    <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold">
+                                        71.34%
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Mobile Cards view -->
+            <div class="sm:hidden space-y-4">
+                <div class="glass-card p-5 rounded-2xl border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">2019 - 2021</span>
+                        <span class="text-sm font-bold text-amber-400">66.75%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mt-2">Diploma in Civil Engineering</h3>
+                    <p class="text-xs text-slate-300 mt-1"><i class="fa-solid fa-university text-amber-500 mr-1"></i> Jigme Namgyel Engineering College, Bhutan</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">2018</span>
+                        <span class="text-sm font-bold text-amber-400">67.40%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mt-2">BHSEC - XII</h3>
+                    <p class="text-xs text-slate-300 mt-1"><i class="fa-solid fa-school text-amber-500 mr-1"></i> Zhemgang Central School, Bhutan</p>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">2016</span>
+                        <span class="text-sm font-bold text-amber-400">71.34%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mt-2">BCSE - X</h3>
+                    <p class="text-xs text-slate-300 mt-1"><i class="fa-solid fa-school text-amber-500 mr-1"></i> Buli Central School, Bhutan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 sm:py-20 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-semibold text-sm uppercase tracking-wider block mb-2">Technical Capabilities</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">Software & Instrument Skills</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Proficiencies in civil drafting tools, structural analysis software, and surveying equipment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Software Skills Card -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-6">
+                    <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                            <i class="fa-solid fa-laptop-code text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white font-heading">Computer Software Skills</h3>
+                            <p class="text-xs text-slate-400">Drafting, 3D modeling & spatial analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between items-center text-sm font-semibold mb-1">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-drafting-compass text-amber-500"></i> AutoCAD Drawing Utilities</span>
+                                <span class="text-amber-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between items-center text-sm font-semibold mb-1">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-cube text-amber-500"></i> SketchUp (3D Modeling)</span>
+                                <span class="text-amber-400">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between items-center text-sm font-semibold mb-1">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-building-circle-check text-amber-500"></i> STAAD.Pro (Structural Analysis)</span>
+                                <span class="text-amber-400">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between items-center text-sm font-semibold mb-1">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-amber-500"></i> Basic ArcGIS Application</span>
+                                <span class="text-amber-400">Basic</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-2.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between items-center text-sm font-semibold mb-1">
+                                <span class="text-white flex items-center gap-2"><i class="fa-solid fa-file-excel text-amber-500"></i> Microsoft Office Program</span>
+                                <span class="text-amber-400">Proficient</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instrument & Leadership Skills Card -->
+                <div class="space-y-8">
+                    <!-- Instruments -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-5">
+                        <div class="flex items-center gap-3 border-b border-slate-700/60 pb-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-crosshairs text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white font-heading">Surveying Instruments</h3>
+                                <p class="text-xs text-slate-400">Field leveling & trigonometric surveying</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/60">
+                                <div class="flex items-center justify-between mb-2">
+                                    <i class="fa-solid fa-mountain-city text-amber-500 text-2xl"></i>
+                                    <span class="px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-400 rounded">Proficient</span>
+                                </div>
+                                <h4 class="font-bold text-white text-base">Dumpy Level</h4>
+                                <p class="text-xs text-slate-400 mt-1">Leveling, contouring, and alignment checks on construction sites.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/60">
+                                <div class="flex items-center justify-between mb-2">
+                                    <i class="fa-solid fa-satellite-dish text-amber-500 text-2xl"></i>
+                                    <span class="px-2 py-0.5 text-xs font-bold bg-blue-500/20 text-blue-400 rounded">Intermediate</span>
+                                </div>
+                                <h4 class="font-bold text-white text-base">Total Station</h4>
+                                <p class="text-xs text-slate-400 mt-1">Electronic distance measurement, layout setting out, and mapping.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leadership / Responsibilities -->
+                    <div class="glass-card p-6 rounded-2xl space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-award text-sm"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white font-heading">Leadership & Appointments</h3>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-amber-400 text-sm">Club Treasurer</h4>
+                                    <p class="text-xs text-slate-300">Jigme Namgyel Engineering College (2021)</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] uppercase font-bold rounded bg-slate-700 text-slate-300">Leadership</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">
+                                <strong class="text-slate-300">Gained Capabilities:</strong> Financial tracking, time management, active interpersonal communication, and self-confidence.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="languages" class="py-16 sm:py-20 bg-slate-900/60 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-500 font-semibold text-sm uppercase tracking-wider block mb-2">Communication</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">Language Skills</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">Multilingual proficiency facilitating effective site management across national and regional teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Dzongkha -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">dz</span>
+                            <h3 class="font-bold text-white text-lg">Dzongkha</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">National</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Excellent</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <strong class="text-white">Excellent</strong></div>
+                        <div class="flex justify-between"><span>Writing:</span> <strong class="text-white">Excellent</strong></div>
+                    </div>
+                </div>
+
+                <!-- English -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">en</span>
+                            <h3 class="font-bold text-white text-lg">English</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/30">Professional</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Very Good</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <strong class="text-white">Excellent</strong></div>
+                        <div class="flex justify-between"><span>Writing:</span> <strong class="text-white">Very Good</strong></div>
+                    </div>
+                </div>
+
+                <!-- Khengkha -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">kh</span>
+                            <h3 class="font-bold text-white text-lg">Khengkha</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-400">Native Dialect</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Excellent</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <span class="text-slate-500">-</span></div>
+                        <div class="flex justify-between"><span>Writing:</span> <span class="text-slate-500">-</span></div>
+                    </div>
+                </div>
+
+                <!-- Sharchop -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">sh</span>
+                            <h3 class="font-bold text-white text-lg">Sharchop</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-400">Regional</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Very Good</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <span class="text-slate-500">-</span></div>
+                        <div class="flex justify-between"><span>Writing:</span> <span class="text-slate-500">-</span></div>
+                    </div>
+                </div>
+
+                <!-- Hindi -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">hi</span>
+                            <h3 class="font-bold text-white text-lg">Hindi</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-400">Conversational</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Fair</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <span class="text-slate-500">-</span></div>
+                        <div class="flex justify-between"><span>Writing:</span> <span class="text-slate-500">-</span></div>
+                    </div>
+                </div>
+
+                <!-- Nepali -->
+                <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-amber-500/40 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 font-bold flex items-center justify-center font-heading">ne</span>
+                            <h3 class="font-bold text-white text-lg">Nepali</h3>
+                        </div>
+                        <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-slate-800 text-slate-400">Conversational</span>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <div class="flex justify-between"><span>Speaking:</span> <strong class="text-white">Fair</strong></div>
+                        <div class="flex justify-between"><span>Reading:</span> <span class="text-slate-500">-</span></div>
+                        <div class="flex justify-between"><span>Writing:</span> <span class="text-slate-500">-</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                <!-- Interests & Hobbies -->
+                <div class="lg:col-span-5 glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3 text-amber-400">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-icons text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white font-heading">Interests & Hobbies</h2>
+                    </div>
+
+                    <ul class="space-y-3 pt-2 text-sm text-slate-300">
+                        <li class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                            <i class="fa-solid fa-microscope text-amber-500"></i>
+                            <span>Doing Research Works</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                            <i class="fa-solid fa-laptop-code text-amber-500"></i>
+                            <span>Learning & Mastering New Software</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                            <i class="fa-solid fa-headphones text-amber-500"></i>
+                            <span>Listening to Music</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Declaration -->
+                <div class="lg:col-span-7 glass-card p-6 sm:p-8 rounded-2xl space-y-4 relative overflow-hidden">
+                    <div class="flex items-center gap-3 text-amber-400">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <i class="fa-solid fa-signature text-xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white font-heading">Official Declaration</h2>
+                    </div>
+
+                    <blockquote class="text-slate-300 text-xs sm:text-sm italic leading-relaxed pt-2 border-l-2 border-amber-500 pl-4">
+                        "I hereby declare that the aforementioned information is true and complete to the best of my knowledge. If the Agency finds me guilty of furnishing fake/forged/fabricated testimonials/documents/transcripts, then I am solely responsible and agree to abide by all Rules and Regulations of the Agency. Besides, if necessary, I can be prosecuted before the court of law for actions as per provisions of the Penal Code of Bhutan."
+                    </blockquote>
+
+                    <div class="pt-4 flex items-center justify-between border-t border-slate-800">
+                        <div>
+                            <span class="block text-white font-bold text-sm">Tashi Dawa</span>
+                            <span class="text-xs text-slate-400">Samdrup Jongkhar, Bhutan</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs font-mono text-amber-500">CID: 12007000929</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 bg-slate-950 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center font-bold text-slate-900 font-heading">
+                            TD
+                        </div>
+                        <span class="font-heading font-bold text-white text-lg">Tashi Dawa</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Civil Site Engineer with expertise in site execution, water supply infrastructure, structural works, and surveying.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-bold text-white font-heading uppercase text-xs tracking-wider mb-3">Direct Contact</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li>
+                            <a href="tel:+97517824454" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-amber-500 w-4"></i> +975 17824454
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:trasheeydaawaa123@gmail.com" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-amber-500 w-4"></i> trasheeydaawaa123@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-bold text-white font-heading uppercase text-xs tracking-wider mb-3">Addresses</h4>
+                    <p class="text-xs text-slate-400 mb-1">
+                        <strong class="text-slate-300">Current:</strong> Samdrup Jongkhar, Bhutan
+                    </p>
+                    <p class="text-xs text-slate-400">
+                        <strong class="text-slate-300">Permanent:</strong> Radhi, Shingkhar, Zhemgang, Bhutan
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; <span id="currentYear"></span> Tashi Dawa. All Rights Reserved.</p>
+                <div class="flex items-center gap-4 no-print">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-amber-400 transition-colors">
+                        <i class="fa-solid fa-arrow-up mr-1"></i> Back to top
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-800 border border-amber-500/50 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+            <span id="toastMsg" class="text-xs sm:text-sm font-medium">Contact info copied!</span>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on clicking nav link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Copy contact information function
+        function copyContactInfo() {
+            const contactText = "Tashi Dawa | Civil Engineer\nPhone: +975 17824454\nEmail: trasheeydaawaa123@gmail.com\nAddress: Samdrup Jongkhar, Bhutan";
+            
+            // Clipboard API fallback support for iframe
+            const textarea = document.createElement('textarea');
+            textarea.value = contactText;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast("Contact information copied to clipboard!");
+            } catch (err) {
+                showToast("Failed to copy automatically.");
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        // Custom toast message
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Handle local photo upload & dynamic update
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const passportImg = document.getElementById('passportPhoto');
+                    if (passportImg) {
+                        passportImg.src = e.target.result;
+                        showToast("Passport photo updated successfully!");
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
